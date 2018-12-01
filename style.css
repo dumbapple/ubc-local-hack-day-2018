@@ -1,0 +1,27 @@
+
+body {
+	font-family: Arial;
+	text-align: center;
+
+}
+
+h1 {
+	
+	font-size: 56pt;
+	color: rgb(30, 120, 170);
+	text-align: center;
+}
+
+#info {
+	text-align: left;
+    background: #eee;
+
+    display: inline-block;
+
+    /* IE7 bs - enables inline-block for div-elements*/
+    *display: inline;
+    zoom: 1;
+	/*display: inline-block;
+	text-align: center;*/
+	
+}
