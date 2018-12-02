@@ -9,6 +9,7 @@
     body {
       font-weight: bold;
       box-sizing: border-box;
+      background-color: rgba(245, 222, 179, 0.5);
       font-family: Arial;
       padding: 13px;
       display: flex;
@@ -16,21 +17,28 @@
       max-height: 100vh;
     }
 
+    h1 {
+      color: rgb(30, 120, 170);
+    }
+
     .members-count,
     .members-list,
     .messages {
       border: 3px solid #AAAAAA;
       padding: 15px;
+      background-color: white;
       margin-bottom: 15px;
     }
 
     .messages {
       flex-shrink: 1;
       overflow: auto;
+      background-color: white;
     }
 
     .message {
       padding: 5px 0;
+      background-color: white;
     }
     .message .member {
       display: inline-block;
@@ -56,6 +64,12 @@
   </style>
 </head>
 <body>
+  <h1>
+  Ocean Chat
+  </h1>
+  <p>
+  Please remember that this is an intended safe space for users. If you have severe feelings of depression or are having suicidal thoughts, please seek help by interacting with a trained therapist.
+  </p>
   <div class="members-count">-</div>
   <div class="members-list">-</div>
   <div class="messages"></div>

@@ -2,6 +2,7 @@
 body {
 	font-family: Arial;
 	text-align: center;
+	background-color: rgba(245, 222, 179, 0.5);
 
 }
 
@@ -12,9 +13,12 @@ h1 {
 	text-align: center;
 }
 
+
+
 #info {
 	text-align: left;
-    background: #eee;
+	/*color: white;*/
+    /*background: rgb(30, 120, 170);*/
 
     display: inline-block;
 
