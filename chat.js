@@ -1,15 +1,14 @@
-// PS! Replace this with your own channel ID
-// If you use this channel ID your app will stop working in the future
+// Make a ScaleDrone channel and replace string with your channel key
 const CLIENT_ID = 'jg6axlOqeJMGNm3I';
 
+let members = [];
+
 const drone = new ScaleDrone(CLIENT_ID, {
-  data: { // Will be sent out as clientData via events
+  data: {
     name: getRandomName(),
     color: getRandomColor(),
   },
 });
-
-let members = [];
 
 drone.on('open', error => {
   if (error) {
@@ -44,14 +43,12 @@ drone.on('open', error => {
   room.on('data', (text, member) => {
     if (member) {
       addMessageToListDOM(text, member);
-    } else {
-      // Message is from server
-    }
+    } 
   });
 });
 
 drone.on('close', event => {
-  console.log('Connection was closed', event);
+  console.log('user disconnected', event);
 });
 
 drone.on('error', error => {
@@ -59,8 +56,8 @@ drone.on('error', error => {
 });
 
 function getRandomName() {
-  const nouns = ["autumn", "hidden", "bitter", "misty", "silent", "empty", "dry", "dark", "summer", "icy", "delicate", "quiet", "white", "cool", "spring", "winter", "patient", "twilight", "dawn", "crimson", "wispy", "weathered", "blue", "billowing", "broken", "cold", "damp", "falling", "frosty", "green", "long", "late", "lingering", "bold", "little", "morning", "muddy", "old", "red", "rough", "still", "small", "sparkling", "throbbing", "shy", "wandering", "withered", "wild", "black", "young", "holy", "solitary", "fragrant", "aged", "snowy", "proud", "floral", "restless", "divine", "polished", "ancient", "purple", "lively", "nameless"];
-  const num = ["forest", "hill", "cloud", "meadow", "sun", "glade", "bird", "brook", "butterfly", "bush", "dew", "dust", "field", "fire", "flower", "firefly", "feather", "grass", "haze", "mountain", "night", "pond", "darkness", "snowflake", "silence", "sound", "sky", "shape", "surf", "thunder", "violet", "water", "wildflower", "wave", "water", "resonance", "sun", "wood", "dream", "cherry", "tree", "fog", "frost", "voice", "paper", "frog", "smoke", "star"];
+  const adjs = ["helpful", "encouraging", "inspirational"];
+  const nouns = ["fish", "cherry", "tree", "fog"];
   return (
     adjs[Math.floor(Math.random() * adjs.length)] +
     "_" +
